@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-set(myproject "EXECUTABIL")
+set(myproject "EXE")
 project(${myproject})
 # Specify the required C++ standard
 if(CMAKE_VERSION GREATER "3.1.2") 
@@ -14,4 +14,4 @@ else()
 endif()
 
 #include_directories(src)
-add_executable(${PROJECT_NAME} main.cpp)
+#add_executable(${PROJECT_NAME} main.cpp)

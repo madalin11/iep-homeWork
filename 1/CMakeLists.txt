@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-set(myproject "EXECUTABIL")
+set(myproject "EXE")
 
 project(${myproject})
 
@@ -15,5 +15,8 @@ else()
     endif()    
 endif()
 
-add_subdirectory(src)
-#add_executable(${PROJECT_NAME} src/main.cpp)
+#include_directories(src)
+#add_subdirectory(src)
+add_executable(${PROJECT_NAME} 
+                src/main.cpp
+                src/Car.cpp)
