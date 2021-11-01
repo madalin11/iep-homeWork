@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/EXE.dir/src/main.cpp.o CMakeFiles/EXE.dir/src/Car.cpp.o -o EXE 
