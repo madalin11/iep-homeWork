@@ -19,4 +19,6 @@ endif()
 #add_subdirectory(src)
 add_executable(${PROJECT_NAME} 
                 src/main.cpp
-                src/Car.cpp)
+                src/Car.cpp
+                src/BMWcar.cpp
+                src/MercedesCar.cpp)
