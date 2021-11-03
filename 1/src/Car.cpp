@@ -33,7 +33,7 @@ class Car{
         this->wheels=c.wheels;
     };
 
-    Car& operator=(const Car& c);
+    Car& operator=(const Car& c)=delete;
     
     virtual void closeTheDoors(){
         std::cout<<"The doors was closed !"<<std::endl;
