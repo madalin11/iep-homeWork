@@ -17,7 +17,23 @@ class BMWcar:public Car{
         this->inscription = b.inscription;
         std::cout<<"copy constructor BMW"<<std::endl;
     }
+    BMWcar& operator=(const BMWcar& c){
+        std::cout<<"Copy assignment operator BMW"<<std::endl;
+        if(this==&c){
+            std::cout<<"Assign to self Bmw"<<std::endl;
 
+            return *this;
+        }
+        Car::operator=(c);
+        inscription=c.inscription;
+        return *this;
+    }
+    BMWcar& operator+=(const BMWcar& c){
+        std::cout<<"ADD operator BMW"<<std::endl;
+        Car::operator+=(c);
+        inscription=c.inscription;
+        return *this;
+    }
     void getNrOfDoors(){
         std::cout<<"Number of doors BMW: "<<this->nrOfDoors<<std::endl;
     }
@@ -29,7 +45,7 @@ class BMWcar:public Car{
         Car::closeTheDoors();
         std::cout<<"Welcome to BMW !"<<std::endl;
     }
-    virtual ~BMWcar(){
+     ~BMWcar(){
         std::cout<<"Destructor bmw"<<std::endl;
     }
 };

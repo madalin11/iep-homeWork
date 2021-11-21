@@ -4,7 +4,7 @@ class Car{
 
     protected:
 
-    std::string colorCar;
+    
     int nrOfDoors;
     int weight;
     std::string wheels;
@@ -12,7 +12,7 @@ class Car{
     std::string fuel;
 
     public:
-
+    std::string colorCar;
     Car(const std::string &color ,const int &nr ,const  int &w,const std::string &wh , const std::string &tr,const std::string &f)
     :colorCar(color),
     nrOfDoors(nr),
@@ -31,9 +31,35 @@ class Car{
         this->tire = c.tire;
         this->weight=c.weight;
         this->wheels=c.wheels;
-    };
+    }
 
-    Car& operator=(const Car& c)=delete;
+    Car& operator=(const Car& c){
+        std::cout<<"Copy assignment operator car "<<std::endl;
+        if(this==&c){
+            std::cout<<"Assign to self car"<<std::endl;
+
+            return *this;
+        }
+        colorCar = c.colorCar;
+        fuel=c.fuel;
+        nrOfDoors = c.nrOfDoors;
+        tire = c.tire;
+        weight=c.weight;
+        wheels=c.wheels;
+
+        return *this;
+    }
+    Car& operator+=(const Car& c){
+        std::cout<<"Add assignment operator car"<<std::endl;
+        colorCar = c.colorCar;
+        fuel=c.fuel;
+        nrOfDoors += c.nrOfDoors;
+        tire = c.tire;
+        weight+=c.weight;
+        wheels=c.wheels;
+
+        return *this;
+    }
     
     virtual void closeTheDoors(){
         std::cout<<"The doors was closed !"<<std::endl;

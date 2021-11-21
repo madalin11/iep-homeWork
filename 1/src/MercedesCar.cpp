@@ -17,6 +17,26 @@ class MercedesCar:public BMWcar{
         this->mercedesAI = m.mercedesAI;
         std::cout<<"Copy constructor mercedes !"<<std::endl;
     }
+
+    MercedesCar& operator=(const MercedesCar& c){
+        std::cout<<"Copy assignment operator Mercedes !"<<std::endl;
+        if(this==&c){
+            std::cout<<"Assign to self mercedes"<<std::endl;
+
+            return *this;
+        }
+
+        BMWcar::operator=(c);
+        mercedesAI=c.mercedesAI;
+        return *this;
+    }
+    MercedesCar& operator+=(const MercedesCar& c){
+        std::cout<<"ADD operator Mercedes !"<<std::endl;
+        BMWcar::operator+=(c);
+        mercedesAI=c.mercedesAI;
+        return *this;
+    }
+
     void closeTheDoors(){
         Car::closeTheDoors();
         std::cout<<"Welcome to Mercedes !"<<std::endl;
