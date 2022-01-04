@@ -3,10 +3,9 @@
 class Car{
 
     protected:
-
-    
     int nrOfDoors;
     int weight;
+    bool isLocked = false;
     std::string wheels;
     std::string tire;
     std::string fuel;
@@ -81,6 +80,17 @@ class Car{
     }
     ~Car(){
         std::cout<<"Desctructor car !"<<std::endl;
+    }
+    void setIsLocked(bool isLocked){
+        this->isLocked=isLocked;
+    }
+
+    void askResource(){
+        if(this->isLocked){
+            std::cout<<"Acces denied ! "<<std::endl;
+        }else{
+            std::cout<<"You have acces ! "<<std::endl;
+        }
     }
 
 };
